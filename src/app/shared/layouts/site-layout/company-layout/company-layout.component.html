@@ -1,0 +1,35 @@
+<img *ngIf="translate.currentLang === 'en'" src="../pictures/missionEN.jpg" alt="Mission" class="center">
+<img *ngIf="translate.currentLang === 'ru'" src="../pictures/mission.jpg" alt="Mission" class="center">
+
+<nav mat-tab-nav-bar
+     mat-align-tabs="center"
+     selBackgroundLightgreyDirective
+>
+  <a mat-tab-link
+     selButtonTextdarkDirective
+     routerLink="/company/aboutUs"
+     routerLinkActive #aboutUsTab="routerLinkActive"
+     [active]="aboutUsTab.isActive">
+    {{'site.menu.company.aboutCompany' | translate}}
+  </a>
+  <a mat-tab-link
+     selButtonTextdarkDirective
+     routerLink="/company/contacts"
+     routerLinkActive #contactTab="routerLinkActive"
+     [active]="contactTab.isActive">
+    {{'site.menu.company.contacts' | translate}}
+  </a>
+  <a mat-tab-link
+     selButtonTextdarkDirective
+     routerLink="/company/investors"
+     routerLinkActive #investorTab="routerLinkActive"
+     [active]="investorTab.isActive">
+    {{'site.menu.company.investors' | translate}}
+  </a>
+</nav>
+
+<div selBackgroundLightorangeDirective>
+  <router-outlet></router-outlet>
+</div>
+
+

@@ -1,0 +1,113 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+
+  <mat-toolbar selBackgroundLightdarkDirective class="example-header example-toolbar">
+    <mat-toolbar-row>
+      <div [hidden]="mobileQuery.matches ? false : false">
+        <button mat-button
+                selYellowWavesDirective
+                selButtonMenuDirective
+                selBackgroundLightdarkDirective
+                (click)="snav.toggle()">
+          <mat-icon>{{snav.opened ? 'close' : 'menu'}}</mat-icon>
+        </button>
+      </div>
+
+      <img class="button-top-menu" src="pictures/eireenlight.jpg">
+
+      <div fxShow="true" fxHide.lt-md style="margin-left: 10px">
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <a *ngFor="let item of navItems"
+           [routerLink]=item.route
+           mat-button
+           class="button-top-menu"
+           selYellowWavesDirective
+           selButtonMenuDirective
+        >
+          <mat-icon class="routeIcon" style="margin-right: 10px">{{item.iconName}}</mat-icon>
+          {{ item.displayName | translate }}
+        </a>
+      </div>
+      <span class="spacer"></span>
+      <span>
+        <button mat-button
+                selYellowWavesDirective
+                selButtonMenuDirective
+                selBackgroundLightdarkDirective
+                (click)="switchLanguage()"
+        >
+          <mat-icon>language</mat-icon>
+          {{ language }}
+        </button>
+      </span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+                         (backdropClick)="snav.close()">
+
+    <mat-sidenav #snav
+                 [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"
+                 selBackgroundLightdarkDirective
+                 (keydown.escape)="snav.close()" disableClose
+    >
+      <mat-tree
+        [dataSource]="dataSource"
+        [treeControl]="treeControl"
+        selYellowWavesDirective
+        selButtonMenuDirective
+        selBackgroundLightdarkDirective
+      >
+        <!-- This is the tree node template for leaf nodes -->
+        <mat-tree-node
+          *matTreeNodeDef="let node"
+          matTreeNodePadding
+          style="margin-left: 5px"
+        >
+          <!-- use a disabled button to provide padding for tree leaf -->
+          <a mat-button
+             selYellowWavesDirective
+             selButtonMenuDirective
+             (click)="onItemSelected(node)">
+            <mat-icon class="routeIcon" style="margin-right: 10px">{{node.iconName}}</mat-icon>
+            {{node.name | translate}}
+          </a>
+        </mat-tree-node>
+        <!-- This is the tree node template for expandable nodes -->
+        <mat-tree-node
+          *matTreeNodeDef="let node;when: hasChild"
+          matTreeNodePadding
+          style="margin-left: 5px"
+        >
+          <a mat-button
+             selYellowWavesDirective
+             selButtonMenuDirective
+             (click)="onItemSelected(node)">
+            <mat-icon class="routeIcon" style="margin-right: 10px">{{node.iconName}}</mat-icon>
+            {{node.name | translate}}
+          </a>
+          <button mat-icon-button
+                  matTreeNodeToggle
+                  selYellowWavesDirective
+                  selButtonMenuDirective
+                  selBackgroundLightdarkDirective
+                  [attr.aria-label]="'toggle ' + node.name"
+          >
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{treeControl.isExpanded(node) ? 'expand_more' : 'expand_less'}}
+            </mat-icon>
+          </button>
+        </mat-tree-node>
+      </mat-tree>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+      <sel-footer-layout></sel-footer-layout>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>
+
+

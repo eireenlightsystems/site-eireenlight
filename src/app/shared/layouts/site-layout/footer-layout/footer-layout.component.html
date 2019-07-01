@@ -1,0 +1,68 @@
+<mat-toolbar layout="fill">
+  <span class="fill-space"></span>
+  <div class="footer-position">
+    <!--  <a [href]="stackoverflowUrl" target="_blank">-->
+    <!--    <img src="https://cdn4.iconfinder.com/data/icons/miu-hexagon-flat-social/60/stackoverflow-hexagon-social-media-32.png" alt=""-->
+    <!--         matTooltip="StackOverflow" matTooltipPosition="above">-->
+    <!--  </a>-->
+    <!--  <a [href]="twitterUrl" target="_blank">-->
+    <!--    <img src="https://cdn4.iconfinder.com/data/icons/miu-hexagon-flat-social/60/twitter-hexagon-social-media-32.png" alt="" matTooltip="Twitter"-->
+    <!--         matTooltipPosition="above">-->
+    <!--  </a>-->
+    <!--  <a [href]="githubUrl" target="_blank">-->
+    <!--    <img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/github_six_color-32.png" alt="" matTooltip="Github"-->
+    <!--         matTooltipPosition="above">-->
+    <!--  </a>-->
+    <!--  <a [href]="fiverrUrl" target="_blank"><img src="https://assetsv2.fiverrcdn.com/assets/v2_globals/fiverr-logo-new-green-9e65bddddfd33dfcf7e06fc1e51a5bc5.png" alt=""-->
+    <!--                                             width="32" height="32" matTooltip="Fiverr" matTooltipPosition="above"></a>-->
+    <a [href]="'https://m.facebook.com/AlekseyLechshev'" target="_blank">
+      <img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/Untitled-16-32.png" alt=""
+           matTooltip="Facebook" matTooltipPosition="above">
+    </a>
+    <!--  <a [href]="googleUrl" target="_blank">-->
+    <!--    <img src="https://cdn4.iconfinder.com/data/icons/miu-hexagon-flat-social/60/google_plus-hexagon-social-media-32.png" alt=""-->
+    <!--         matTooltip="Google+" matTooltipPosition="above">-->
+    <!--  </a>-->
+    <a [href]="'https://www.linkedin.com/in/alexleshhev/'" target="_blank">
+      <img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/Untitled-11-32.png" alt=""
+           matTooltip="LinkedIn" matTooltipPosition="above">
+    </a>
+  </div>
+  <span class="fill-space"></span>
+</mat-toolbar>
+
+<div selBackgroundLightgreyDirective class="fr" style="margin: 0;">
+  <mat-list class="footer-position">
+    <mat-list-item><b>{{'site.menu.company.aboutCompany' | translate}}</b></mat-list-item>
+    <mat-list-item
+      selTextFontweightDirective
+      selYellowWavesDirective
+    >
+      <a [routerLink]="'/company/aboutUs'">
+        {{'site.company.aboutUs.aboutUs' | translate}}
+      </a>
+    </mat-list-item>
+    <mat-list-item
+      selTextFontweightDirective
+      selYellowWavesDirective
+    >
+      <a [routerLink]="'/company/contacts'">
+        {{'site.menu.company.contacts' | translate}}
+      </a></mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item><b>{{'site.company.investors.partners' | translate}}</b></mat-list-item>
+    <mat-list-item
+      selTextFontweightDirective
+      selYellowWavesDirective
+    >
+      <a [routerLink]="'/company/investors'">
+        {{'site.company.investors.investors' | translate}}
+      </a>
+    </mat-list-item>
+  </mat-list>
+</div>
+<div selBackgroundLightdarkDirective>
+  <label>© {{ 'site.namecompany' | translate }} {{ 'site.footer.rights' | translate }}</label>
+</div>
+

@@ -1,0 +1,51 @@
+// material-theme.scss                       styles/material
+// This is the main material theme file
+/////////////////////////////////////////////////////////////////////////
+
+
+@import "~@angular/material/theming";
+
+
+// Include the Material Core styles
+@include mat-core();
+
+
+// Get custom colors
+@import "material-colors";
+
+
+// Primary Theme Colors
+$darts-primary: mat-palette($mat-armygold);
+$darts-accent:  mat-palette($mat-black);
+$darts-warn:    mat-palette($mat-red);
+
+
+// Set Primary Theme
+$darts-light-theme: mat-light-theme(
+    $darts-primary,
+    $darts-accent,
+    $darts-warn
+);
+
+
+// Set Dark Theme
+$darts-dark-theme: mat-dark-theme(
+    $darts-primary,
+    $darts-accent,
+    $darts-warn
+);
+
+
+// Set Default Theme
+@include angular-material-theme($darts-light-theme);
+
+
+// Dark Theme class [ .app-dark-theme ]
+// (anything wrapped with this class will apply the dark theme)
+.darts-dark-theme {
+  @include angular-material-theme($darts-dark-theme);
+}
+
+
+// Get custom typogrpahy
+@import "material-typography";

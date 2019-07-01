@@ -1,0 +1,17 @@
+.example-card{
+  margin: 20px 30px 20px 30px;
+}
+
+.example-header-image {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.darts-dark-theme{
+  color: #e0e0e0;
+  background: #262626;
+}

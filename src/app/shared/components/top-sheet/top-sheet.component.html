@@ -1,0 +1,20 @@
+<mat-nav-list>
+  <div class='close' (click)="closeDialog($event)" >X</div>
+  <div>
+    <div><b>Sort By:-</b></div>
+    <br/>
+    <mat-chip-list #sortBy  (click)="getSortBy($event)">
+      <mat-chip>Old</mat-chip>
+      <mat-chip>New</mat-chip>
+    </mat-chip-list>
+    <br/>
+    <div><b>Filter By:-</b></div>
+    <br/>
+    <mat-chip-list #filterby (click)="getfilterby($event)">
+      <mat-chip>One fish</mat-chip>
+      <mat-chip>Two fish</mat-chip>
+      <mat-chip color="primary" selected>Primary fish</mat-chip>
+      <mat-chip color="accent" selected>Accent fish</mat-chip>
+    </mat-chip-list>
+  </div>
+</mat-nav-list>

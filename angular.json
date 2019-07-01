@@ -19,13 +19,39 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/eireenlight.jpg",
+              "src/pictures/eireenlight.jpg",
+              "src/pictures/mission.jpg",
+              "src/pictures/missionEN.jpg",
+              "src/pictures/problem.jpg",
+              "src/pictures/decision.jpg",
+              "src/pictures/technology.jpg",
+              "src/pictures/pagebuild.jpg",
+              "src/pictures/presentationLCS.pptx",
+
+              "src/pictures/team/leshev.jpg",
+              "src/pictures/team/lubimov.jpg",
+              "src/pictures/team/okuncev.jpg",
+              "src/pictures/team/raskin.jpg",
+              "src/pictures/team/bot.jpg",
+
+              "src/pictures/investor/inofond.png",
+              "src/pictures/investor/primegroup.jpg",
+
+              "src/pictures/product/mapProjectEN.jpg",
+              "src/pictures/product/mapProjectRU.jpg",
+
+              "src/assets",
+
+              "src/video/dynamic-lighting.wmv"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -80,11 +106,14 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": [],
             "assets": [
-              "src/favicon.ico",
+              "src/eireenlight.jpg",
+              "src/pictures/eireenlight.jpg",
+              "src/pictures/problem.jpg",
               "src/assets"
             ]
           }

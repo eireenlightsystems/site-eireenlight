@@ -1,0 +1,20 @@
+<div class="iframeshow">
+  <iframe [src]="safeSrc" width="700" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
+</div>
+
+<div class="iframeshow">
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTJQWi2VuR_AyIBllqb4KTUoje7qJsEh23HuQSLUyki0ASDvyvmqCi0VD1jwoNPIx3kBTZRFMPhL3f2/embed?start=true&loop=true&delayms=3000"
+          frameborder="0" width="700" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+<h4 class="center">{{ 'site.products.projectGoals' | translate }}</h4>
+<div>{{ 'site.products.projectGoalsName' | translate }}
+</div>
+
+<h4 class="center">{{ 'site.products.team' | translate }}</h4>
+<sel-team-project-lcs></sel-team-project-lcs>
+
+<h4 class="center">{{ 'site.products.maproad' | translate }}</h4>
+<img *ngIf="translate.currentLang === 'en'" src="../pictures/product/mapProjectEN.jpg" alt="Map project" class="img-product-projectLCS">
+<img *ngIf="translate.currentLang === 'ru'" src="../pictures/product/mapProjectRU.jpg" alt="Map project" class="img-product-projectLCS">
+<br>

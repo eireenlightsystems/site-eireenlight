@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="translate.currentLang === 'en'">
+      <sel-person-card
+        *ngFor="let person of personsEN"
+        [cardinfo]="person"
+      ></sel-person-card>
+    </div>
+    <div *ngIf="translate.currentLang === 'ru'">
+      <sel-person-card
+        *ngFor="let person of personsRU"
+        [cardinfo]="person"
+      ></sel-person-card>
+    </div>
+  </div>
+</div>
