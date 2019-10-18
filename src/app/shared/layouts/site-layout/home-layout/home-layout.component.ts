@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, NgZone, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {MaterialService} from '../../../classes/material.service';
 
@@ -9,7 +9,25 @@ import {MaterialService} from '../../../classes/material.service';
 })
 export class HomeLayoutComponent implements OnInit, AfterViewInit {
 
-  constructor(public translate: TranslateService) {
+  heightToFooter = 100;
+  screenHeight = 0;
+  screenWidth = 0;
+
+  constructor(private ngZone: NgZone,
+              public translate: TranslateService) {
+
+    // screen change
+    window.onresize = (e) => {
+      ngZone.run(() => {
+        // console.log(window.innerWidth);
+        // console.log(window.innerHeight);
+        this.screenHeight = window.innerHeight;
+        this.screenWidth = window.innerWidth;
+        if (this.screenHeight < 1300) {
+
+        }
+      });
+    };
   }
 
   ngOnInit() {
