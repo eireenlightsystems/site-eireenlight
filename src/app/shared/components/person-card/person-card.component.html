@@ -1,4 +1,4 @@
-<div *ngIf="cardinfo.theme === 'light'" class="col s2">
+<div *ngIf="cardinfo.theme === 'light'" class="col s2" style="margin-left: 20px">
   <section>
     <mat-card class="example-card"
               [style.width]="cardinfo.width"
@@ -32,36 +32,36 @@
   </section>
 </div>
 
-<div *ngIf="cardinfo.theme === 'dark'" class="col s3">
-  <section>
-    <mat-card class="example-card darts-dark-theme"
-              [style.width]="cardinfo.width"
-              [style.height]="cardinfo.height"
-    >
-      <mat-card-header>
-        <div mat-card-avatar
-             *ngIf="cardinfo.isMatCardAvatar"
-             class="example-header-image">
-          <img mat-card-image [src]="cardinfo.matCardAvatar" alt="Avatar">
-        </div>
-        <mat-card-title>{{cardinfo.matCardTitle}}</mat-card-title>
-        <mat-card-subtitle class="darts-dark-theme">{{cardinfo.matCardSubtitle}}</mat-card-subtitle>
-      </mat-card-header>
+<!--<div *ngIf="cardinfo.theme === 'dark'" class="col s3">-->
+<!--  <section>-->
+<!--    <mat-card class="example-card darts-dark-theme"-->
+<!--              [style.width]="cardinfo.width"-->
+<!--              [style.height]="cardinfo.height"-->
+<!--    >-->
+<!--      <mat-card-header>-->
+<!--        <div mat-card-avatar-->
+<!--             *ngIf="cardinfo.isMatCardAvatar"-->
+<!--             class="example-header-image">-->
+<!--          <img mat-card-image [src]="cardinfo.matCardAvatar" alt="Avatar">-->
+<!--        </div>-->
+<!--        <mat-card-title>{{cardinfo.matCardTitle}}</mat-card-title>-->
+<!--        <mat-card-subtitle class="darts-dark-theme">{{cardinfo.matCardSubtitle}}</mat-card-subtitle>-->
+<!--      </mat-card-header>-->
 
-      <img mat-card-image
-           [src]="cardinfo.matCardImage"
-           alt="Photo"
-           [style.width]="cardinfo.widthPhoto"
-           [style.height]="cardinfo.heightPhoto">
+<!--      <img mat-card-image-->
+<!--           [src]="cardinfo.matCardImage"-->
+<!--           alt="Photo"-->
+<!--           [style.width]="cardinfo.widthPhoto"-->
+<!--           [style.height]="cardinfo.heightPhoto">-->
 
-      <mat-card-content>
-        <p>{{cardinfo.matCardContent}}</p>
-      </mat-card-content>
+<!--      <mat-card-content>-->
+<!--        <p>{{cardinfo.matCardContent}}</p>-->
+<!--      </mat-card-content>-->
 
-      <mat-card-actions *ngIf="cardinfo.isAction">
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
-    </mat-card>
-  </section>
-</div>
+<!--      <mat-card-actions *ngIf="cardinfo.isAction">-->
+<!--        <button mat-button>LIKE</button>-->
+<!--        <button mat-button>SHARE</button>-->
+<!--      </mat-card-actions>-->
+<!--    </mat-card>-->
+<!--  </section>-->
+<!--</div>-->
